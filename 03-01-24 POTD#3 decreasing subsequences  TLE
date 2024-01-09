@@ -1,0 +1,25 @@
+// TLE aa rha h...
+// 150/175 test cases passed
+
+
+int minMoves(int a[], int n, int k)
+{
+  int left=0,right=1,c=0;
+  while(left<n-1)
+  {
+      if(a[right]>a[left])
+      {
+         
+          while(a[right]>a[left])
+          {
+              a[right]-=k;
+              c++;
+          }
+      }
+      
+          left++;
+          right++;
+      
+  }
+  return c%1000000007;
+}
