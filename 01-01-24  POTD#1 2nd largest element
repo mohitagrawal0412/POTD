@@ -1,0 +1,23 @@
+class Solution{
+public:	
+	// Function returns the second
+	// largest elements
+	int print2largest(int a[], int n) {
+// making set , for deleting repeated elements 
+// with set , number will automatically gets sorted
+set<int> st;
+
+for(int i=0;i<n;i++)
+{
+    st.insert(a[i]);
+}
+// checking if size = 1 , it means , all number are same in array
+if(st.size()==1)
+return -1;
+// for end largest , returning 2nd element from end
+auto it2=st.end();
+ advance(it2,-2);
+ return *it2;
+
+	}
+};
