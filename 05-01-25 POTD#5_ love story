@@ -1,0 +1,21 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin>>n;
+    string check="codeforces";
+    for(int i=0;i<n;i++)
+    {
+        string str;
+        cin>>str;
+        int c=0;
+        for(int i=0;i<check.size();i++)
+        {
+            if(check[i]!=str[i])
+            c++;
+        }
+        cout<<"\n "<<c;
+    }
+    return 0;
+}
