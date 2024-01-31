@@ -1,0 +1,31 @@
+class Solution {
+public:
+    string removeOuterParentheses(string s) {
+
+    int n=s.length();
+    string str="";
+    int left=0,right=0;
+    int index=0;
+    for(int i=0;i<n;i++)
+    {
+        if(s[i]=='(')
+        left++;
+        else
+        right++;
+        str+=s[i];
+      
+            if(left <n && right<n)
+            {
+                    if(left==right)
+                    {
+                    str.erase(str.begin()+index);
+                    str.erase(str.end()-1);
+                    left=0;
+                    right=0;
+                    index=str.length();                  
+                    }                   
+            }            
+}
+return str;
+    }
+};
