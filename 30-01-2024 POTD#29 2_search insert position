@@ -1,0 +1,7 @@
+class Solution {
+public:
+    int searchInsert(vector<int>& arr, int target) {
+         int index = lower_bound(arr.begin(), arr.end(), target) - arr.begin();
+return index;
+    }
+};
