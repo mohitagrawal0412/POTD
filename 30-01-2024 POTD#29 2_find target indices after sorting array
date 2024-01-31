@@ -1,0 +1,54 @@
+class Solution {
+public:
+    vector<int> targetIndices(vector<int>& a, int target) {
+         sort(a.begin(),a.end());
+         vector<int> ans;
+        int first=lower_bound(a.begin(),a.end(),target)-a.begin();
+        int last=upper_bound(a.begin(),a.end(),target)-a.begin();
+        if(first==last)
+        return {};
+        while(first<last)
+        ans.push_back(first++);
+        return ans;      
+        
+    }
+};
+
+// approach 2
+//  sort(a.begin(),a.end());
+//          vector<int> ans;
+//          for(int i=0;i<a.size();i++)
+//          {
+//              if(a[i]==target)
+//              {
+//                  ans.push_back(i);
+//              }
+//              else if(a[i]>target)
+//              return ans;
+//          }
+//          return ans;
+
+
+
+// approach 1
+// with binary search , confused when number like [ 1,2,2,2,2,5]  and target is 2, then which side to go left or right
+//   sort(a.begin(),a.end());
+//         int start=0,end=a.size()-1,mid;
+//         vector<int> ans;
+//     while(start<=end)
+//     {
+//          mid=(start+end)/2;
+//         if(a[mid]==target)
+//         {
+//             ans.push_back(mid);
+//             break;
+//         } else if(target>a[mid])
+//         {
+//             start=mid+1;
+//         }
+//         else
+//         {
+//             end=mid-1;
+//         }
+//     }
+//     return ans;
